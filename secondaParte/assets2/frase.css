@@ -1,0 +1,76 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+main {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center; 
+    margin: 19rem;
+}
+
+#testoAlternato {
+    border: black solid 2px;
+    padding: 1.5rem;
+    line-height: 2.5rem;
+
+}
+
+ @keyframes sparizione {
+    0%  {opacity: 0; left:0px; top:-20px;}
+    50% {color: #5B7E94; right:226px; top:0px;}
+  100%  {opacity: 0; left:0px; top:20px;}
+ }
+
+ @keyframes apparizione {
+    0%  {opacity: 0; right:226px; top:-20px;}
+    50% {color: #5B7E94; right:226px; top:0px;}
+  100%  {color: white; right:226px; top:20px;} 
+ }
+
+ @keyframes apparizione2 {
+    0%  {opacity: 0; right: 460px; top:-20px;}
+    25% {opacity: 0; right: 460px; top:-20px;}
+    50% {color: #5B7E94; right:460px; top:0px;}
+  100%  {color: white; right:460px; top:20px;} 
+ }
+
+.parole { 
+    color: #5B7E94;
+}
+
+
+#parola1 {
+    position: relative;
+    animation-name: sparizione;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+   
+
+#parola2 {
+    position: relative;
+    animation-name: apparizione;
+    animation-iteration-count: infinite;
+    animation-duration: 9s;
+    animation-delay: -2;
+    animation-fill-mode: forwards;
+}
+
+#parola3 {
+    position: relative;
+    animation-name: apparizione2;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+    animation-delay: -6;
+    animation-fill-mode: forwards;
+}
